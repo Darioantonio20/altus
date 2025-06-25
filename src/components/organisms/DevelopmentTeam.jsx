@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import DeveloperCard from '../molecules/DeveloperCard';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import ImgDario from '../../assets/team/ImgPerfilDario.png';
 
 const developers = [
   {
@@ -24,7 +25,7 @@ const developers = [
   {
     name: 'Darío Antonio Gutiérrez Álvarez',
     role: 'Fullstack Developer - Ing. en Software',
-    image: '/team/dario.jpg',
+    image: ImgDario,
     socialLinks: [
       {
         platform: 'linkedin',

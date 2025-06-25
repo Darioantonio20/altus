@@ -3,6 +3,7 @@ import { PhoneIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
 import { useRef } from 'react';
 import Button from '../../components/atoms/Button';
 import DevelopmentTeam from '../../components/organisms/DevelopmentTeam';
+import PackagesSection from '../../components/organisms/PackagesSection';
 import LogoAltus from '../../assets/images/LogoAltus.png';
 
 const LandingPage = () => {
@@ -160,6 +161,9 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* Packages Section */}
+      <PackagesSection />
+
       {/* Development Team Section */}
       <DevelopmentTeam />
 
@@ -196,9 +200,6 @@ const LandingPage = () => {
                     <p className="font-medium text-gray-200">Teléfonos</p>
                     <a href="tel:+529651000634" className="text-gray-300 hover:text-primary transition-colors block">
                       (965) 100 0634
-                    </a>
-                    <a href="tel:+529651212998" className="text-gray-300 hover:text-primary transition-colors block">
-                      (965) 121 2998
                     </a>
                   </div>
                 </div>
