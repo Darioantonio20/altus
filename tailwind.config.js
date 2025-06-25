@@ -6,24 +6,20 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'squaregame': ['"Square Game"', 'sans-serif'],
+      },
       colors: {
         primary: {
-          DEFAULT: '#00CC66',
-          dark: '#00994D',
-          light: '#33FF99',
+          DEFAULT: 'rgb(0, 168, 149)',
+          dark: 'rgb(0, 163, 82)',
         },
+        accent: 'rgb(0, 255, 128)',
         dark: {
-          DEFAULT: '#1A1A1A',
-          secondary: '#262626',
-          lighter: '#333333',
+          DEFAULT: 'rgb(26, 26, 26)',
+          secondary: 'rgb(38, 38, 38)',
+          lighter: 'rgb(51, 51, 51)',
         },
-        accent: {
-          DEFAULT: '#00FF80',
-          dark: '#00CC66',
-        },
-      },
-      fontFamily: {
-        sans: ['Inter var', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

@@ -3,6 +3,7 @@ import { PhoneIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
 import { useRef } from 'react';
 import Button from '../../components/atoms/Button';
 import DevelopmentTeam from '../../components/organisms/DevelopmentTeam';
+import LogoAltus from '../../assets/images/LogoAltus.png';
 
 const LandingPage = () => {
   const containerRef = useRef(null);
@@ -46,18 +47,30 @@ const LandingPage = () => {
       <section className="relative min-h-screen flex items-center justify-center w-full bg-gradient-dark">
         <motion.div
           style={{ y: backgroundY }}
-          className="absolute inset-0 bg-gradient-radial from-primary/10 via-transparent to-transparent"
+          className="absolute inset-0 bg-gradient-radial from-primary bg-opacity-5 via-transparent to-transparent"
         />
         <div className="container mx-auto px-4 py-12 sm:py-24 relative z-10 w-full">
           <motion.div
             style={{ y: heroY, opacity: heroOpacity }}
             className="max-w-4xl mx-auto text-center"
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent leading-tight">
+            <motion.div
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="mb-8"
+            >
+              <img 
+                src={LogoAltus} 
+                alt="Altus Logo" 
+                className="mx-auto w-64 md:w-80 lg:w-96"
+              />
+            </motion.div>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#b3cee9] to-[#ffffff] leading-tight font-squaregame">
               Soluciones Tecnológicas para tu Negocio
             </h1>
-            <p className="text-lg sm:text-xl mb-8 text-gray-300 max-w-2xl mx-auto">
-              En Fix HS, transformamos tus desafíos en soluciones innovadoras.
+            <p className="text-lg sm:text-xl mb-8 text-gray-300 max-w-2xl mx-auto font-squaregame">
+              En Altus, transformamos tus desafíos en soluciones innovadoras.
               Expertos en desarrollo de software y soporte técnico.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 px-4">
@@ -67,7 +80,7 @@ const LandingPage = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-primary text-primary hover:bg-primary hover:text-white w-full sm:w-auto"
+                className="border-white text-white hover:bg-primary hover:text-primary w-full sm:w-auto"
               >
                 Conoce más
               </Button>
@@ -118,10 +131,10 @@ const LandingPage = () => {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-primary">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-primary font-squaregame">
               Nuestros Servicios
             </h2>
-            <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto font-squaregame">
               Soluciones completas para todas tus necesidades tecnológicas
             </p>
           </motion.div>
@@ -134,13 +147,13 @@ const LandingPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-dark-lighter rounded-xl p-6 sm:p-8 shadow-lg hover:shadow-primary/20 transition-all duration-300 border border-primary/10 transform hover:-translate-y-1"
+                className="bg-dark-lighter rounded-xl p-6 sm:p-8 shadow-lg hover:shadow-primary hover:shadow-opacity-20 transition-all duration-300 border border-primary border-opacity-10 transform hover:-translate-y-1"
               >
                 <div className="text-primary mb-4 transform hover:scale-110 transition-transform">
                   {service.icon}
                 </div>
-                <h3 className="text-xl sm:text-2xl font-semibold mb-4 text-primary">{service.title}</h3>
-                <p className="text-gray-300">{service.description}</p>
+                <h3 className="text-xl sm:text-2xl font-semibold mb-4 text-primary font-squaregame">{service.title}</h3>
+                <p className="text-gray-300 font-squaregame">{service.description}</p>
               </motion.div>
             ))}
           </div>
@@ -161,10 +174,10 @@ const LandingPage = () => {
               transition={{ duration: 0.5 }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-primary">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-primary font-squaregame">
                 Contáctanos
               </h2>
-              <p className="text-lg sm:text-xl text-gray-300">
+              <p className="text-lg sm:text-xl text-gray-300 font-squaregame">
                 Estamos aquí para ayudarte con tus proyectos
               </p>
             </motion.div>
@@ -254,14 +267,29 @@ const LandingPage = () => {
 
 const services = [
   {
-    title: 'Desarrollo de Software',
-    description: 'Creamos soluciones personalizadas que impulsan tu negocio al siguiente nivel.',
-    icon: <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">💻</div>,
+    title: 'Marketing Digital',
+    description: 'Estrategias digitales efectivas para aumentar tu presencia online.',
+    icon: <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">📱</div>,
   },
   {
-    title: 'Soporte Técnico',
-    description: 'Asistencia experta para mantener tu infraestructura tecnológica funcionando sin problemas.',
-    icon: <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">🛠️</div>,
+    title: 'Branding',
+    description: 'Creación y desarrollo de identidad de marca única y memorable.',
+    icon: <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">🎨</div>,
+  },
+  {
+    title: 'Community Manager',
+    description: 'Gestión profesional de tus redes sociales para conectar con tu audiencia.',
+    icon: <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">💬</div>,
+  },
+  {
+    title: 'Desarrollo de páginas Web',
+    description: 'Sitios web modernos y responsivos que destacan tu presencia digital.',
+    icon: <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">🌐</div>,
+  },
+  {
+    title: 'Desarrollo de Software',
+    description: 'Soluciones personalizadas que impulsan tu negocio al siguiente nivel.',
+    icon: <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">💻</div>,
   },
   {
     title: 'Consultoría IT',
