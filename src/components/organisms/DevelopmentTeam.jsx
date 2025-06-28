@@ -11,18 +11,6 @@ const developers = [
     socialLinks: [],
   },
   {
-    name: 'Jaqueline Berenice Pérez Pérez',
-    role: 'Lic. en Comunicación',
-    image: '/team/jaqueline.jpg',
-    socialLinks: [],
-  },
-  {
-    name: 'Jeyner Ulices Espinosa Gómez',
-    role: 'Lic. en Comunicación',
-    image: '/team/jeyner.jpg',
-    socialLinks: [],
-  },
-  {
     name: 'Darío Antonio Gutiérrez Álvarez',
     role: 'Fullstack Developer - Ing. en Software',
     image: ImgDario,
@@ -58,10 +46,10 @@ const DevelopmentTeam = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-primary mb-4 font-squaregame">
+          <h2 className="text-4xl font-bold text-primary mb-4" style={{fontFamily: 'Arial, sans-serif'}}>
             Nuestro Equipo
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto font-squaregame">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto" style={{fontFamily: 'Arial, sans-serif'}}>
             Conoce a los expertos detrás de Altus, comprometidos con la excelencia
             y la innovación en cada proyecto.
           </p>
@@ -72,16 +60,6 @@ const DevelopmentTeam = () => {
           <DeveloperCard {...developers[0]} />
           <DeveloperCard {...developers[1]} />
           <DeveloperCard {...developers[2]} />
-          
-          {/* Segunda fila: 2 cards centradas */}
-          <div className="lg:col-span-3 flex flex-col sm:flex-row justify-center gap-8">
-            <div className="sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)]">
-              <DeveloperCard {...developers[3]} />
-            </div>
-            <div className="sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)]">
-              <DeveloperCard {...developers[4]} />
-            </div>
-          </div>
         </div>
       </div>
     </section>

@@ -91,7 +91,7 @@ const PackageCard = ({ pack, isPopular }) => {
             transition={{ duration: 0.5 }}
             className="text-center"
           >
-            <h3 className="text-3xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent mb-6 font-squaregame relative">
+            <h3 className="text-3xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent mb-6 relative" style={{fontFamily: 'Arial, sans-serif'}}>
               {pack.name}
               <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-gradient-to-r from-primary to-primary-dark rounded-full"></div>
             </h3>
@@ -99,7 +99,8 @@ const PackageCard = ({ pack, isPopular }) => {
             <div className="flex items-center justify-center space-x-1">
               <span className="text-2xl font-bold text-primary">$</span>
               <motion.span 
-                className="text-5xl font-bold text-white font-squaregame"
+                className="text-5xl font-bold text-white"
+                style={{fontFamily: 'Arial, sans-serif'}}
                 initial={{ scale: 0.5, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ 
@@ -153,7 +154,8 @@ const PackageCard = ({ pack, isPopular }) => {
             }}
           />
           <motion.span
-            className="relative z-10 inline-flex items-center font-squaregame"
+            className="relative z-10 inline-flex items-center"
+            style={{fontFamily: 'Arial, sans-serif'}}
             whileHover={{ letterSpacing: "0.1em" }}
             transition={{ duration: 0.1 }}
           >
@@ -190,10 +192,10 @@ const PackagesSection = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-primary mb-4 font-squaregame">
+          <h2 className="text-4xl font-bold text-primary mb-4" style={{fontFamily: 'Arial, sans-serif'}}>
             Paquetes de Sistemas para Consultorios Médicos
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto font-squaregame">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto" style={{fontFamily: 'Arial, sans-serif'}}>
             Soluciones adaptadas a las necesidades de tu consultorio
           </p>
         </motion.div>

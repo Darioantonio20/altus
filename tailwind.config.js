@@ -6,9 +6,6 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        'squaregame': ['"Square Game"', 'sans-serif'],
-      },
       colors: {
         primary: {
           DEFAULT: 'rgb(0, 168, 149)',

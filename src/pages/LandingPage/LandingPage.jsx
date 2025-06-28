@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import Button from '../../components/atoms/Button';
 import DevelopmentTeam from '../../components/organisms/DevelopmentTeam';
 import PackagesSection from '../../components/organisms/PackagesSection';
+import ImageCarousel from '../../components/organisms/ImageCarousel';
 import LogoAltus from '../../assets/images/LogoAltus.png';
 
 const LandingPage = () => {
@@ -67,10 +68,10 @@ const LandingPage = () => {
                 className="mx-auto w-64 md:w-80 lg:w-96"
               />
             </motion.div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#b3cee9] to-[#ffffff] leading-tight font-squaregame">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#b3cee9] to-[#ffffff] leading-tight" style={{fontFamily: 'Arial, sans-serif'}}>
               Soluciones Tecnológicas para tu Negocio
             </h1>
-            <p className="text-lg sm:text-xl mb-8 text-gray-300 max-w-2xl mx-auto font-squaregame">
+            <p className="text-lg sm:text-xl mb-8 text-gray-300 max-w-2xl mx-auto" style={{fontFamily: 'Arial, sans-serif'}}>
               En Altus, transformamos tus desafíos en soluciones innovadoras.
               Expertos en desarrollo de software y soporte técnico.
             </p>
@@ -122,6 +123,9 @@ const LandingPage = () => {
         </motion.div>
       </section>
 
+      {/* Image Carousel Section */}
+      <ImageCarousel />
+
       {/* Services Section */}
       <section className="py-24 bg-dark-secondary w-full">
         <div className="container mx-auto px-4">
@@ -132,10 +136,10 @@ const LandingPage = () => {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-primary font-squaregame">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-primary" style={{fontFamily: 'Arial, sans-serif'}}>
               Nuestros Servicios
             </h2>
-            <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto font-squaregame">
+            <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto" style={{fontFamily: 'Arial, sans-serif'}}>
               Soluciones completas para todas tus necesidades tecnológicas
             </p>
           </motion.div>
@@ -153,8 +157,8 @@ const LandingPage = () => {
                 <div className="text-primary mb-4 transform hover:scale-110 transition-transform">
                   {service.icon}
                 </div>
-                <h3 className="text-xl sm:text-2xl font-semibold mb-4 text-primary font-squaregame">{service.title}</h3>
-                <p className="text-gray-300 font-squaregame">{service.description}</p>
+                <h3 className="text-xl sm:text-2xl font-semibold mb-4 text-primary" style={{fontFamily: 'Arial, sans-serif'}}>{service.title}</h3>
+                <p className="text-gray-300" style={{fontFamily: 'Arial, sans-serif'}}>{service.description}</p>
               </motion.div>
             ))}
           </div>
@@ -178,10 +182,10 @@ const LandingPage = () => {
               transition={{ duration: 0.5 }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-primary font-squaregame">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-primary" style={{fontFamily: 'Arial, sans-serif'}}>
                 Contáctanos
               </h2>
-              <p className="text-lg sm:text-xl text-gray-300 font-squaregame">
+              <p className="text-lg sm:text-xl text-gray-300" style={{fontFamily: 'Arial, sans-serif'}}>
                 Estamos aquí para ayudarte con tus proyectos
               </p>
             </motion.div>

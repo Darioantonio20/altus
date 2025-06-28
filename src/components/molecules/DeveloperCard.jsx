@@ -14,7 +14,13 @@ const DeveloperCard = ({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
+      whileHover={{ scale: 1.05 }}
+      transition={{ 
+        type: "spring", 
+        stiffness: 300, 
+        duration: 0.5 
+      }}
+      className="relative group"
     >
       <Atropos
         className="my-atropos"
@@ -25,18 +31,16 @@ const DeveloperCard = ({
         highlight={true}
       >
         <div className="bg-dark-lighter rounded-xl shadow-lg overflow-hidden hover:shadow-primary/20 transition-shadow border border-primary/10">
-          <div className="aspect-w-1 aspect-h-1">
+          <div className="relative w-36 h-32 mx-auto mt-4 mb-2 overflow-hidden rounded-lg">
             <img
               src={image}
               alt={name}
-              className="w-full h-full object-cover"
-              loading="lazy"
-              data-atropos-offset="5"
+              className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
             />
           </div>
           <div className="p-6" data-atropos-offset="3">
-            <h3 className="text-xl font-semibold text-primary font-squaregame" data-atropos-offset="5">{name}</h3>
-            <p className="mt-2 text-gray-300 font-squaregame" data-atropos-offset="3">{role}</p>
+                    <h3 className="text-xl font-semibold text-primary" style={{fontFamily: 'Arial, sans-serif'}} data-atropos-offset="5">{name}</h3>
+        <p className="mt-2 text-gray-300" style={{fontFamily: 'Arial, sans-serif'}} data-atropos-offset="3">{role}</p>
             
             {socialLinks.length > 0 && (
               <div className="mt-4 flex space-x-4" data-atropos-offset="2">
