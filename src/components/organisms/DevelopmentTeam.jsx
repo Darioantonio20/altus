@@ -4,12 +4,13 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import ImgDario from '../../assets/team/ImgPerfilDario.png';
 import ImgDavid from '../../assets/team/ImgPerfilDavid.png';
 import ImgSamuel from '../../assets/team/ImgPerfilSamuel.png';
+import ImgFidel from '../../assets/team/ImgPerfilFidel.png';
 
 const developers = [
   {
     name: 'Fidel Torres Arroyo',
     role: 'CEO - Lic. en Informática',
-    image: '/team/fidel.jpg',
+    image: ImgFidel,
     socialLinks: [],
   },
   {
