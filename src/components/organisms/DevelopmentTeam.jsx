@@ -2,6 +2,8 @@ import { motion } from 'framer-motion';
 import DeveloperCard from '../molecules/DeveloperCard';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import ImgDario from '../../assets/team/ImgPerfilDario.png';
+import ImgDavid from '../../assets/team/ImgPerfilDavid.png';
+import ImgSamuel from '../../assets/team/ImgPerfilSamuel.png';
 
 const developers = [
   {
@@ -28,10 +30,38 @@ const developers = [
     ],
   },
   {
-    name: 'Samuel Alberto Hernandez',
+    name: 'Samuel Escobar Hernández',
     role: 'Product Owner - Ing. en Software',
-    image: '/team/samuel.jpg',
-    socialLinks: [],
+    image: ImgSamuel,
+    socialLinks: [
+      {
+        platform: 'linkedin',
+        url: 'https://www.linkedin.com/in/samuel-escobar-hernández-273b75332',
+        icon: <FaLinkedin className="w-6 h-6" />,
+      },
+      {
+        platform: 'github',
+        url: 'https://github.com/samu2103',
+        icon: <FaGithub className="w-6 h-6" />,
+      },
+    ],
+  },
+  {
+    name: 'Jesús David Ruiz',
+    role: 'Backend Developer - Ing. en Software',
+    image: ImgDavid,
+    socialLinks: [
+      {
+        platform: 'linkedin',
+        url: 'https://www.linkedin.com/in/jes%C3%BAs-david-ruiz-197b12224',
+        icon: <FaLinkedin className="w-6 h-6" />,
+      },
+      {
+        platform: 'github',
+        url: 'https://github.com/Villo29',
+        icon: <FaGithub className="w-6 h-6" />,
+      },
+    ],
   },
 ];
 
@@ -55,11 +85,11 @@ const DevelopmentTeam = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {/* Primera fila: 3 cards */}
-          <DeveloperCard {...developers[0]} />
-          <DeveloperCard {...developers[1]} />
-          <DeveloperCard {...developers[2]} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+          {/* Grid actualizado para 4 cards */}
+          {developers.map((developer, index) => (
+            <DeveloperCard key={index} {...developer} />
+          ))}
         </div>
       </div>
     </section>
