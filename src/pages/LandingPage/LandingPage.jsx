@@ -9,10 +9,24 @@ import LogoAltus from '../../assets/images/LogoAltus.png';
 
 const LandingPage = () => {
   const containerRef = useRef(null);
+  const contactRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"]
   });
+
+  // Función para hacer scroll suave hasta el formulario de contacto
+  const scrollToContact = () => {
+    contactRef.current?.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+  };
+
+  // Función para abrir Facebook
+  const openFacebook = () => {
+    window.open('https://www.facebook.com/altusmd', '_blank');
+  };
 
   const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
@@ -76,13 +90,18 @@ const LandingPage = () => {
               Expertos en desarrollo de software y soporte técnico.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 px-4">
-              <Button size="lg" className="bg-primary hover:bg-primary-dark w-full sm:w-auto">
+              <Button 
+                size="lg" 
+                className="bg-primary hover:bg-primary-dark w-full sm:w-auto"
+                onClick={scrollToContact}
+              >
                 Contáctanos
               </Button>
               <Button 
                 variant="outline" 
                 size="lg" 
                 className="border-white text-white hover:bg-primary hover:text-primary w-full sm:w-auto"
+                onClick={openFacebook}
               >
                 Conoce más
               </Button>
@@ -172,7 +191,7 @@ const LandingPage = () => {
       <DevelopmentTeam />
 
       {/* Contact Section */}
-      <section className="py-24 bg-dark-secondary w-full">
+      <section ref={contactRef} className="py-24 bg-dark-secondary w-full">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <motion.div
@@ -213,6 +232,22 @@ const LandingPage = () => {
                     <p className="font-medium text-gray-200">Email</p>
                     <a href="mailto:soporte@fix-hs.com.mx" className="text-gray-300 hover:text-primary transition-colors">
                       soporte@fix-hs.com.mx
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <svg className="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                  <div>
+                    <p className="font-medium text-gray-200">Facebook</p>
+                    <a 
+                      href="https://www.facebook.com/altusmd" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-gray-300 hover:text-primary transition-colors"
+                    >
+                      @altusmd
                     </a>
                   </div>
                 </div>
